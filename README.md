@@ -1,1 +1,1 @@
-"TH-Bingen TurtleBot-Soccer"
+TH-Bingen TurtleBot-Soccer
