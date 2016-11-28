@@ -1,0 +1,7 @@
+\subsubsection usage Usage
+\verbatim
+<node name="ScanBall" pkg="daniels" type="ScanBall">
+  <param name="scanResolution" type="double" value="50.0" />
+</node>
+\endverbatim
+

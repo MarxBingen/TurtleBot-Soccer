@@ -1,0 +1,14 @@
+<launch>
+  <arg name="dev" default="/dev/input/js1" />
+  <arg name="rns" default="" />
+
+  <node pkg="joy" type="joy_node" name="joystick$(arg rns)">
+    <param name="dev" value="$(arg dev)" />
+    <remap from="joy" to="joy$(arg rns)" />
+  </node>
+
+  <node pkg="daniels" type="football.py" name="football$(arg rns)">
+  	<remap from="joy" to="joy$(arg rns)" />
+	<remap from="HumanTwistMsg" to="$(arg rns)/navigation_velocity_smoother/raw_cmd_vel" />
+  </node>
+</launch>

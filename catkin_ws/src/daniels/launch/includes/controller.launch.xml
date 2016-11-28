@@ -1,0 +1,19 @@
+<launch>
+  <arg name="dev" default="/dev/input/js1" />
+  <arg name="team" default="blue" />
+
+  <node pkg="joy" type="joy_node" name="joystick$(arg team)">
+    <param name="dev" value="$(arg dev)" />
+    <remap from="joy" to="joy$(arg team)" />
+  </node>
+
+  <node pkg="daniels" type="football.py" name="football$(arg team)">
+  	<remap from="joy" to="joy$(arg team)" />
+	<remap from="HumanTwistMsg" to="HumanTwistMsg$(arg team)" />
+  </node>
+ 
+<!--  <node pkg="image_view" type="image_view" name="image_view" args="image:=/Robot3/camera/rgb/image_raw"/> -->
+<!--  <node pkg="image_view" type="image_view" name="image_view" image_transport" value="theora" /> 
+        <param name="image" value="/Robot1/camera/rgb/image_raw" />
+  </node> -->
+</launch>

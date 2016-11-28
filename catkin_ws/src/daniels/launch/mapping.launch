@@ -1,0 +1,9 @@
+<launch>
+	<arg name="robot" doc="benoetigtes argument, robot namespace"/>
+	<include file="$(find daniels)/launch/includes/gmapping.launch.xml">
+		<arg name="rns" value="$(arg robot)"/>
+	</include>
+	<include file="$(find daniels)/launch/includes/ctrlmapping.launch.xml">
+		<arg name="rns" value="$(arg robot)"/>
+	</include>
+</launch>

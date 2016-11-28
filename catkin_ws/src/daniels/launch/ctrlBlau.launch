@@ -1,0 +1,8 @@
+<launch>
+        <arg name="js" default="1" />
+	<include file="$(find daniels)/launch/includes/controller.launch.xml">
+		<arg name="dev" value="/dev/input/js$(arg js)" />
+		<arg name="team" value="blue"/>
+	</include>
+
+</launch>
